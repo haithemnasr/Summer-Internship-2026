@@ -11,36 +11,36 @@ public class AppShell {
         drawer = new XHashtableDrawer();
     }
     public void start() {
-        NOut.println(NMsg.ofPlain("Type help to see commands."));
+        NOut.println(NMsg.ofC("##:5:%s##","Type help to see commands."));
         while (true) {
-            String command = NIn.readLine(NMsg.ofPlain("> "));
+            String command = NIn.readLine(NMsg.ofC("##:4:%s##","> "));
             if (command.equalsIgnoreCase("add")) {
-                String value = NIn.readLine(NMsg.ofPlain("Value: "));
+                String value = NIn.readLine(NMsg.ofC("##:92:%s##","Value: "));
                 table.add(value);
             } else if (command.equalsIgnoreCase("delete")) {
-                String value = NIn.readLine(NMsg.ofPlain("Value: "));
+                String value = NIn.readLine(NMsg.ofC("##:92:%s##","Value: "));
                 if (table.delete(value)) {
-                    NOut.println(NMsg.ofPlain("Deleted"));
+                    NOut.println(NMsg.ofC("##:2:%s##","Deleted"));
                 } else {
-                    NOut.println(NMsg.ofPlain("Not found"));
+                    NOut.println(NMsg.ofC("##:31:%s##","Not found"));
                 }
             } else if (command.equalsIgnoreCase("find")) {
-                String value = NIn.readLine(NMsg.ofPlain("Value: "));
+                String value = NIn.readLine(NMsg.ofC("##:92:%s##","Value: "));
                 if (table.find(value)) {
-                    NOut.println(NMsg.ofPlain("Found"));
+                    NOut.println(NMsg.ofC("##:2:%s##","Found"));
                 } else {
-                    NOut.println(NMsg.ofPlain("Not found"));
+                    NOut.println(NMsg.ofC("##:1:%s##","Not found"));
                 }
             } else if (command.equalsIgnoreCase("help")) {
-                NOut.println(NMsg.ofPlain("add"));
-                NOut.println(NMsg.ofPlain("delete"));
-                NOut.println(NMsg.ofPlain("find"));
-                NOut.println(NMsg.ofPlain("help"));
-                NOut.println(NMsg.ofPlain("exit"));
+                NOut.println(NMsg.ofC("##:34:%s##","add"));
+                NOut.println(NMsg.ofC("##:2:%s##","delete"));
+                NOut.println(NMsg.ofC("##:32:%s##","find"));
+                NOut.println(NMsg.ofC("##:33:%s##","help"));
+                NOut.println(NMsg.ofC("##:31:%s##","exit"));
             } else if (command.equalsIgnoreCase("exit")) {
                 break;
             } else {
-                NOut.println(NMsg.ofPlain("Unknown command"));
+                NOut.println(NMsg.ofC("##:31:%s##","Unknown command"));
             }
             drawer.draw(table);
         }

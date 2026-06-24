@@ -1,0 +1,22 @@
+for (int i = 0; i < liste.size() - 1; i++) {
+    for (int j = i + 1; j < liste.size(); j++) {
+
+        Map.Entry<String, Integer> e1 = liste.get(i);
+        Map.Entry<String, Integer> e2 = liste.get(j);
+
+        boolean echanger = false;
+
+        if (e1.getValue() < e2.getValue()) {
+            echanger = true;
+        }
+        else if (e1.getValue().equals(e2.getValue())
+                 && e1.getKey().compareTo(e2.getKey()) > 0) {
+            echanger = true;
+        }
+
+        if (echanger) {
+            liste.set(i, e2);
+            liste.set(j, e1);
+        }
+    }
+}
