@@ -1,0 +1,4 @@
+--patch-module
+com.mycompany.javafxapplicationphase2=_
+--add-reads
+com.mycompany.javafxapplicationphase2=ALL-UNNAMED
