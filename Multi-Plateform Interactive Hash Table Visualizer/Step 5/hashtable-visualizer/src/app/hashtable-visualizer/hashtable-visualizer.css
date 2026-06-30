@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+canvas {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 610px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  width: 200px;
+  padding: 5px;
+}
+
+button {
+  padding: 6px 12px;
+}
+.visualization {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.side-panel {
+  width: 250px;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  font-family: monospace;
+}
+.side-panel h3 {
+    margin-top: 0;
+}
+
+.side-panel div {
+    margin-bottom: 8px;
+}
+
+.side-panel b {
+    display: inline-block;
+    width: 35px;
+}
