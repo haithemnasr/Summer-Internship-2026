@@ -14,7 +14,6 @@ public class XHashtable {
     }
     public void add(String key) {
         int index = hash(key);
-        // check if key already exists
         Node current = table[index];
         while (current != null) {
             if (current.key.equals(key)){

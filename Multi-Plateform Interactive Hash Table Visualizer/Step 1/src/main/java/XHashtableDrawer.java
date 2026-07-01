@@ -5,7 +5,7 @@ public class XHashtableDrawer {
         Node[] table = hashTable.getTable();
         for (int i = 0; i < table.length; i++) {
             StringBuilder str = new StringBuilder();
-            str.append(i).append(" -> ");
+            str.append(i).append(" --- ");
             Node current = table[i];
             while (current != null) {
                 str.append(current.key).append(" ");

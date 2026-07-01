@@ -38,11 +38,20 @@ public class XHashtableSwingDrawer extends JPanel{
 
         for (int i = 0; i < table.length; i++) {
             int y = startY + i * rowHeight;
+            g2.setColor(Color.WHITE);
+            g2.fillRect(startX, y, boxWidth, boxHeight);
             g2.setColor(Color.BLACK);
-            g2.drawString("[" + i + "]", startX, y + 20);
+            g2.drawRect(startX, y, boxWidth, boxHeight);
+            String indexText = String.valueOf(i);
+            g2.drawString(indexText, startX + 35, y + 20);
 
             Node current = table[i];
-            int x = startX + 40;
+            int x = startX + boxWidth + 20;
+            
+            if (table[i] != null) {
+                g2.setColor(Color.BLACK);
+                g2.drawLine(startX + boxWidth,y + boxHeight / 2,x, y + boxHeight / 2);
+            }
             while (current != null) {
                 if (i == highlightIndex) {
                     g2.setColor(highlightColor);
